@@ -5,7 +5,7 @@
 <br/>
 
 # Descrição
-"Link Me" é um projeto que visa criar uma plataforma onde o usuário pode gerar senhas com opções personalizadas.
+"Senhador" é uma plataforma onde o usuário pode gerar senhas aleatórias com algumas personalizações.
 - Alteração do tamanho de caracteres
 - Incluir letras maiúsculas
 - Incluir números
