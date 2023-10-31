@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* TEMA CLARO */
+    --cor1: #CD5C08;
+    --cor2: #f5e8b7da;
+    --cor3: #C1D8C3;
+    --cor4: #6A9C89;
+    --cor5: #000;
+}
+
+.dark-modo:root {
+    /* TEMA ESCURO */
+    --cor1: #F99417;
+    --cor2: #f3ebeb6b;
+    --cor3: #4D4C7D;
+    --cor4: #363062;
+    --cor5: #FFF;
+}
+
+body {
+    background-color: var(--cor4);
+    color: var(--cor5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    height: 100vh;
+    transition: background 0.2s linear;
+}
+
+header {
+    position: relative;
+}
+
+.lock {
+    background-color: var(--cor2);
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px #00000036;
+
+    height: 175px;
+    width: 175px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lock svg {
+    width: 74px;
+    height: 120px;
+}
+
+.lock path {
+    fill: var(--cor1);
+}
+
+.button-theme {
+    position: absolute;
+    bottom: 0px;
+    right: -103px;
+}
+
+.check-btheme {
+    opacity: 0;
+    position: absolute;
+}
+
+.check-btheme:checked+.label-btheme .ball {
+    transform: translateX(27px);
+}
+
+.label-btheme {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    padding: 5px;
+    height: 23px;
+    width: 50px;
+}
+
+.label-btheme i {
+    color: var(--cor2);
+}
+
+.label-btheme .ball {
+    background-color: var(--cor1);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 19px;
+    width: 19px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.password {
+    background-color: var(--cor3);
+    font-size: 20px;
+    position: relative;
+
+    width: 384px;
+    height: 54px;
+    padding: 15px 13px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password .text {
+    background-color: transparent;
+    color: var(--cor5);
+    font-weight: 600;
+    font-size: 20px;
+    
+    border: none;
+    outline: none;
+    cursor: default;
+    
+    height: 24px;
+    flex: 1;
+
+    transition: all 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.password .text.font-sm {
+    font-size: 16px;
+}
+
+.password .text.font-xs {
+    font-size: 11px;
+}
+
+.password button {
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.password button:before {
+    content: "Copiado";
+    position: absolute;
+    top: -16px;
+    right: 0;
+    background-color: var(--cor2);
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: none;
+}
+
+.password button:after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    background-color: var(--cor2);
+    display: none;
+}
+
+.password.active button:before, .password.active button:after {
+    display: block;
+}
+
+.password .fa-copy {
+    color: var(--cor1);
+}
+
+.password .fa-copy:active {
+    opacity: .5;
+}
+
+.config {
+    background-color: var(--cor3);
+    
+    width: 384px;
+    padding: 15px 13px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 34px; 
+}
+
+.pass-length {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.pass-length span {
+    font-size: 24px;
+    color: var(--cor1);
+}
+
+.slider {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 11px;
+    background-color: var(--cor4);
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+    transition: opacity 0.2s;
+    margin-top: 22px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 23px;
+    border-radius: 23px;
+    background-color: var(--cor1);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 23px;
+    height: 23px;
+    border-radius: 23px;
+    background-color: var(--cor1);
+    cursor: pointer;
+}
+
+.checks {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    line-height: 22px;
+}
+
+.pass-itens {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 40px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pass-itens input {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.pass-itens .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: transparent;
+    border: 2px solid var(--cor5);
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.pass-itens input:checked ~ .checkmark {
+    background-color: var(--cor5);
+}
+
+.pass-itens .checkmark::after {
+    content: "";
+    display: none;
+    position: absolute;
+    left: 5.8px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid var(--cor3);
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+}
+
+.pass-itens input:checked ~ .checkmark::after {
+    display: block;
+}
+
+.pass-strength {
+    background-color: var(--cor4);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    color: #FFF;
+    text-transform: uppercase;
+
+    height: 53px;
+    padding: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pass-strength-bar {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    gap: 10px;
+}
+
+.pass-strength-bar div {
+    width: 13px;
+    height: 25px;
+}
+
+.pass-button {
+    background-color: var(--cor1);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #FFF;
+
+    height: 53px;
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    margin: 35px 0;
+}
+
+footer .direitos {
+    font-size: .6rem;
+    color: #FFF;
+}
+
+@media only screen and (max-width: 540px) {
+
+    body {
+        font-size: .8rem;
+    }
+    .lock {
+        height: 100px;
+        width: 100px;
+    }
+
+    .lock svg {
+        width: 43px;
+        height: 70px;
+    }
+
+    .button-theme {
+        position: absolute;
+        bottom: 0px;
+        right: calc(100vw - 125vw);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    .password {
+        width: 100%;
+    }
+
+    .config {
+        width: 100%;
+    }
+
+    footer {
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-height: 600px) and (min-width: 1000px) {
+
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        padding: 20px;
+    }
+
+    .button-theme {
+        position: absolute;
+        bottom: 0px;
+        right: calc(100vw - 105vw);
+    }
+
+    footer {
+        position: absolute;
+        bottom: -15px;
+        left: calc(50% + 50px);
+
+    }
+
+
+}
